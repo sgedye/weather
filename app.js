@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       feelsLike.innerHTML = `Feels Like: <strong>${apparent_t}°C</strong>`
       humidity.innerHTML = `Humidity: <strong>${rel_hum}%</strong>`
 
+      document.getElementById("loading").style.display = 'none'
       setWeatherIcon(wind_spd_kmh, rain_trace, cloud, lastReport)
     })
 
