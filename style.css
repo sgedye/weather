@@ -34,6 +34,7 @@ a { text-decoration: none; }
 #weather { padding: 2rem 0 4rem 0; }
 #temperature {
   border: 2px solid green;
+  margin-bottom: 10rem;
 }
 #temperature > #real-temp {
   font-size: 16rem;

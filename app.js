@@ -60,13 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       iconName = isDay ? 'CLEAR_DAY' : 'CLEAR_NIGHT'
     }
-
-    const skycons = new Skycons({'color': 'white'})
+    const skycons = new Skycons({ 'color': '#333' })
     skycons.play()
     return skycons.set(weatherIcon, Skycons[iconName])
   }
 
-  
   const convertToFahrenheit = tempInC => tempInC * 9 / 5 + 32
   const convertToCelsius = tempInF => (tempInF - 32) * 5 / 9
 
