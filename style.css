@@ -1,6 +1,7 @@
 :root {
   font-size: 10px;
 }
+
 body {
   display: grid;
   align-items: center;
@@ -8,8 +9,9 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: linear-gradient(lightblue, purple);
+  background: linear-gradient(#5f86fb, #b30eb3);
 }
+
 .container {
   margin: 0;
   width: 100%;

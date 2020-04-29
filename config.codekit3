@@ -39,6 +39,17 @@
 		"oAP": "/index.html",
 		"oF": 0
 		},
+	"/skycons.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/skycons-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/style-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -67,7 +78,7 @@
 "projectAttributes": {
 	"creationDate": 609768883.27878499,
 	"displayValue": "weather",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_green",
 	"iconImageWasSetByUser": 0
 	},
