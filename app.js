@@ -1,3 +1,5 @@
+//  If you want to use GeoLocation:
+//
 // document.addEventListener("DOMContentLoaded", () => {
 //   let long, lat
 //   if (navigator.geolocation) {
@@ -6,14 +8,16 @@
 //       lat = Math.round(position.coords.latitude)
 //       console.log(long, lat)
 //     })
-//
-//     const api = "http://www.bom.gov.au/fwo/IDW60901/IDW60901.94608.json"  // BOM Data for Perth Observations - Individual Stations
-//
-//   } else { alert("Please allow geolocation") }
+//     const api = "https://www.whatever.json"
+//   } else { 
+//     alert("Please allow geolocation")
+//   }
 // })
-  
+
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("temperature").style.display = 'none'
+
   const location = document.getElementById("location")
   const realTemperature = document.getElementById("real-temp")
   const lastChecked = document.getElementById("last-checked")
@@ -34,25 +38,25 @@ document.addEventListener("DOMContentLoaded", () => {
       location.innerHTML = `${name}, ${state_time_zone}`
       realTemperature.innerHTML = `${air_temp}°C`
       let lastReport = local_date_time.replace(/\d+\/0?/, '')
-      console.log(lastReport)
       lastChecked.innerHTML = `Accurate as of: <strong>${lastReport}</strong>`
       feelsLike.innerHTML = `Feels Like: <strong>${apparent_t}°C</strong>`
       humidity.innerHTML = `Humidity: <strong>${rel_hum}%</strong>`
+      wind.innerHTML = `Wind: <strong>${wind_spd_kmh} km/h</strong>`
 
       document.getElementById("loading").style.display = 'none'
+      document.getElementById("temperature").style.display = 'block'
       setWeatherIcon(wind_spd_kmh, rain_trace, cloud, lastReport)
     })
-
+    
   function setWeatherIcon(wind, rain, cloud, time) {
     let militaryTime = time.includes('pm') 
       ? Number(time.replace(/\D/g, '')) + 1200
       : Number(time.replace(/\D/g, ''))
     let isDay = (militaryTime >= 0600 && militaryTime < 1800)
     let iconName
-    console.log(time, militaryTime, isDay)
     if (Number(rain) >= 0.5) {
       iconName = 'RAIN'
-    } else if (wind >= 10) {
+    } else if (wind >= 15) {
       iconName = 'WIND'
     } else if (cloud === "Cloudy") {
       iconName = 'CLOUDY'
@@ -61,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       iconName = isDay ? 'CLEAR_DAY' : 'CLEAR_NIGHT'
     }
-    const skycons = new Skycons({ 'color': '#333' })
+    const skycons = new Skycons({ 'color': '#222' })
     skycons.play()
     return skycons.set(weatherIcon, Skycons[iconName])
   }

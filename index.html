@@ -6,25 +6,25 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="title">Weather App</h1>
-      <div class="wrapper">
-        <h2 id="location">Perth WA</h2>
+      <h2 id="location">Perth WA</h2>
+      <p id="last-checked">Accurate as of:</p>
+      <section class="wrapper">
+        <h6 id="loading">I</h6>
         <div id="weather">
           <canvas id="weather-icon" width="400" height="300"></canvas>
-          <h6 id="loading">I</h6>
         </div>
         <div id="temperature">
           <h2 id="real-temp">°C</h2>
         </div>
-        <p id="last-checked">Accurate as of:</p>
-        <div id="additional-info">
-          <p id="feel-temp">Feels like:</p>
-          <p id="humidity">Humidity:</p>
-        </div>
-        <div id="footer">
-          <p>Data provided by the <a href="http://www.bom.gov.au/" target="_blank", rel="noopener noreferrer">BOM</a></p>
-          <p>Created by <a href="https://sgedye.github.io/" target="_blank", rel="noopener noreferrer">sgedye</a></p>
-        </div>
+      </section>
+      <div id="additional-info">
+        <p id="feel-temp">Feels like:</p>
+        <p id="humidity">Humidity:</p>
+        <p id="wind">Wind:</p>
+      </div>
+      <div id="footer">
+        <p>Data provided by the <a href="http://www.bom.gov.au/" target="_blank", rel="noopener noreferrer">BOM</a></p>
+        <p>Created by <a href="https://sgedye.github.io/" target="_blank", rel="noopener noreferrer">sgedye</a></p>
       </div>
     </div>
     <script src="./skycons.js" charset="utf-8"></script>
