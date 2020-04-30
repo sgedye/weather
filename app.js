@@ -49,10 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     
   function setWeatherIcon(wind, rain, cloud, time) {
-    
-    //time = '09:00am'
-    // cloud = 'Partly cloudyj'
-
     let militaryTime = time.includes('pm') 
       ? Number(time.replace(/\D/g, '')) + 1200
       : Number(time.replace(/\D/g, ''))
